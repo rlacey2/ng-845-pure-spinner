@@ -1,0 +1,62 @@
+.container {
+  padding: 24px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+ 
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.test-card {
+  padding: 14px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.test-card:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.desc {
+  font-size: 12px;
+  opacity: 0.9;
+}

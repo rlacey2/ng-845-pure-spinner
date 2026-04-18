@@ -1,0 +1,69 @@
+<div class="container">
+
+  <h2>Smart Loader Playground</h2>
+
+  <!-- 🎛 Controls -->
+<div class="controls">
+
+
+<label>
+  Debounce: {{ debounce() }} ms
+  <input type="range"
+         min="0"
+         max="10000"
+         [value]="debounce()"
+         (input)="updateDebounce($event)">
+</label>
+<br>
+<label>
+  Min Duration: {{ minDuration() }} ms
+  <input type="range"
+         min="0"
+         max="25000"
+         [value]="minDuration()"
+         (input)="updateMinDuration($event)">
+</label>
+<br>
+<label>
+  Async Duration: {{ asyncDuration() }} ms
+  <input type="range"
+         min="0"
+         max="25000"
+         [value]="asyncDuration()"
+         (input)="updateAsyncDuration($event)">
+</label>
+<br>
+Examples 2, 4 use some of the slider values
+</div>
+
+  <!-- 🧪 Test Buttons (Angular @for) -->
+  <div class="grid">
+    @for (t of tests; track t.id) {
+      <div class="test-card"
+           (click)="runTest(t.id)"
+           [title]="t.desc">
+
+        <div class="title">
+          {{ t.id }} - {{ t.label }}
+        </div>
+
+        <div class="desc">
+          {{ t.desc }}
+        </div>
+
+      </div>
+    }
+  </div>
+
+  <!-- 🧠 Debug Panel -->
+  <div class="debug">
+    <h3>Debug Panel</h3>
+
+    <div>Loading: {{ loader.loading() }}</div>
+    <div>Active Requests: {{ loader.activeRequests }}</div>
+    <div>Messages: {{ loader.messages().length }}</div>
+    <div>Debounce: {{ debounce() }}</div>
+    <div>Min Duration: {{ minDuration() }}</div>
+  </div>
+
+</div>
